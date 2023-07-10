@@ -20,8 +20,8 @@ const Chat = () => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const location = useLocation();
-  // const ENDPOINT = process.env.REACT_APP_ASSET_URL;
-  const ENDPOINT = 'https://chat-app-toft.onrender.com';
+  const ENDPOINT = process.env.REACT_APP_ASSET_URL;
+  // const ENDPOINT = 'https://chat-app-toft.onrender.com';
   // const ENDPOINT = 'https://localhost5000;
 
 
