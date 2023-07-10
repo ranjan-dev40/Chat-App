@@ -11,9 +11,19 @@ const app = express();
 const server = http.createServer(app);
 
 
-const io = socketio(server);
+const io = socketio(server, {
+  cors: {
+    // origin: 'http://localhost:3000',
+    origin: 'https://unique-halva-6abbeb.netlify.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  },
+});
 
-app.use(cors());
+
+// app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://unique-halva-6abbeb.netlify.app' }));
+
 app.use(router);
 
 io.on('connect', (socket) => {
