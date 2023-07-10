@@ -13,7 +13,7 @@ const server = http.createServer(app);
 
 const io = socketio(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: process.env.USER_URL,
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   },
@@ -64,7 +64,8 @@ io.on('connect', (socket) => {
   });
 });
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+// app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: process.env.USER_URL }));
 app.use(router);
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
