@@ -13,7 +13,7 @@ const server = http.createServer(app);
 
 const io = socketio(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://unique-halva-6abbeb.netlify.app',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   },
@@ -64,7 +64,7 @@ io.on('connect', (socket) => {
   });
 });
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://unique-halva-6abbeb.netlify.app' }));
 app.use(router);
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));

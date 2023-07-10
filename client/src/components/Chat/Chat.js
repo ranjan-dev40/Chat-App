@@ -20,8 +20,8 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const location = useLocation();
 
-  const ENDPOINT = 'http://localhost:5000'; // Replace with your server URL
-  // const ENDPOINT = 'https://chat-app-toft.onrender.com'; // Replace with your server URL
+  // const ENDPOINT = 'http://localhost:5000'; // Replace with your server URL
+  const ENDPOINT = 'https://chat-app-toft.onrender.com'; // Replace with your server URL
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
